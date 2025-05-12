@@ -5,10 +5,9 @@ import joblib
 # Load model
 model = joblib.load("model.pkl")
 
-# Set page config
+# Set page config and background image only (no white form box)
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
-# Custom background using public GitHub raw image
 st.markdown(
     """
     <style>
@@ -28,7 +27,6 @@ st.markdown(
 st.title("❤️ Heart Disease Prediction")
 st.markdown("Fill out the following information to assess your heart health risk:")
 
-# Input form
 with st.form("heart_form"):
     age = st.number_input("Age", 29, 77, 58)
     sex = st.selectbox("Sex", ["Male", "Female"])
@@ -46,7 +44,6 @@ with st.form("heart_form"):
 
     submitted = st.form_submit_button("Predict")
 
-# Prepare input and predict
 if submitted:
     input_df = pd.DataFrame({
         "age": [age],
