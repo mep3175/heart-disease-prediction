@@ -5,8 +5,26 @@ import joblib
 # Load model
 model = joblib.load("model.pkl")
 
-# Page config
+# Set page config and custom background
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
+
+st.markdown(
+    """
+    <style>
+        body {
+            background-image: url("https://raw.githubusercontent.com/mep3175/heart-disease-streamlit/main/static/background.jpg");
+            background-size: cover;
+        }
+        .stApp {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 20px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("❤️ Heart Disease Prediction")
 st.markdown("Fill out the following information to assess your heart health risk:")
 
