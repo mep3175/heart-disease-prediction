@@ -26,7 +26,21 @@ st.markdown(
 )
 
 st.title("❤️ Heart Disease Prediction")
-st.markdown("Fill out the following information to assess your heart health risk:")
+st.markdown("""
+<div class="form-box">
+    <h4>Fill out the following information to assess your heart health risk:</h4>
+</div>
+<style>
+    .form-box {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Input form
 with st.form("heart_form"):
