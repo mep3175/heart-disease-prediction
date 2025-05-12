@@ -5,20 +5,20 @@ import joblib
 # Load model
 model = joblib.load("model.pkl")
 
-# Set page config and custom background
+# Set page config
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
+# Custom background using public GitHub raw image
 st.markdown(
     """
     <style>
-        body {
-            background-image: url("https://raw.githubusercontent.com/mep3175/heart-disease-streamlit/main/static/background.jpg");
-            background-size: cover;
-        }
         .stApp {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-image: url("https://raw.githubusercontent.com/mep3175/heart-disease-prediction/refs/heads/main/static/background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             padding: 2rem;
-            border-radius: 20px;
         }
     </style>
     """,
