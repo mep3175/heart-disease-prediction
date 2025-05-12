@@ -1,31 +1,99 @@
-# Heart Disease Prediction Web App
+# ❤️ Heart Disease Prediction Web App
 
-This project is a complete end-to-end machine learning pipeline to predict heart disease risk. It includes:
+This project is a **machine learning–powered web application** that predicts the likelihood of heart disease based on medical inputs. Built with **Flask**, it uses a **Decision Tree Classifier** trained on real medical data.
 
-- Data preprocessing
-- Model training (Decision Tree)
-- Flask-based web app
-- Beautiful front-end
-- Model output and evaluation
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Flask-WebApp-lightgrey)
+![Status](https://img.shields.io/badge/Status-Deployed-green)
+![License](https://img.shields.io/badge/License-MIT-lightgreen)
 
-## Getting Started
+---
 
-1. Install dependencies:
+## 🚀 Features
+
+- 🧠 ML model (Decision Tree) trained on heart.csv
+- 📊 Exploratory Data Analysis included (`main.ipynb`)
+- 🌐 Flask-based front-end with clean UI
+- ✅ User-friendly form with recommended ranges
+- 🎨 Styled with transparent layout and responsive design
+- 🔁 Result page shows risk or no-risk with color feedback
+- 🔒 Optional `.gitignore` and clean folder structure
+
+---
+
+## 📂 Folder Structure
+
 ```
-pip install -r requirements.txt
+Heart_Disease_Prediction/
+├── app.py
+├── main.ipynb
+├── model.pkl
+├── heart.csv
+├── prediction_pipeline.py
+├── requirements.txt
+├── static/
+│   └── background.jpg
+├── templates/
+│   ├── index.html
+│   ├── result.html
+│   └── error.html
+└── README.md
 ```
 
-2. Run the app:
-```
-python app.py
-```
+---
 
-3. Open in browser: `http://127.0.0.1:5000`
+## 📥 Installation & Run
 
-## Files
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/mep3175/heart-disease-prediction.git
+   cd heart-disease-prediction
+   ```
 
-- `heart.csv`: Dataset
-- `main.ipynb`: Training code
-- `model.pkl`: Trained model
-- `app.py`: Flask application
-- `prediction_pipeline.py`: Input handling and model prediction
+2. Create virtual environment and activate:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # on Windows
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the app:
+   ```bash
+   python app.py
+   ```
+
+5. Open in browser:  
+   ```
+   http://127.0.0.1:5000/
+   ```
+
+---
+
+## 🧠 Model Info
+
+- **Model:** DecisionTreeClassifier  
+- **Accuracy:** ~87% on test set  
+- **Dataset:** 13 medical features  
+- **Target:** Presence of heart disease (binary classification)
+
+---
+
+## 🧑‍💻 Author
+
+**Meet Patel**  
+🔗 [GitHub Profile](https://github.com/mep3175)  
+📧 meetpatel.test@gmail.com
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+> 💡 Want to deploy this to the web (Render, HuggingFace, Heroku)? Let me know — I’ll help you do it in 5 minutes.
