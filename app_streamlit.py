@@ -5,10 +5,10 @@ import joblib
 # Load model
 model = joblib.load("model.pkl")
 
-# Set page config
+# Page configuration
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
-# Custom background using public GitHub raw image
+# Add full background image style
 st.markdown(
     """
     <style>
@@ -18,31 +18,20 @@ st.markdown(
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            padding: 2rem;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-st.title("❤️ Heart Disease Prediction")
+# Begin form container
 st.markdown("""
-<div class="form-box">
-    <h4>Fill out the following information to assess your heart health risk:</h4>
-</div>
-<style>
-    .form-box {
-        background-color: rgba(255, 255, 255, 0.85);
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-        max-width: 700px;
-        margin: 0 auto 2rem auto;
-    }
-</style>
+<div class="form-container">
+    <h2 style='text-align: center;'>❤️ Heart Disease Prediction</h2>
+    <p style='text-align: center;'>Fill out the following information to assess your heart health risk:</p>
 """, unsafe_allow_html=True)
 
-# Input form
+# Start form
 with st.form("heart_form"):
     age = st.number_input("Age", 29, 77, 58)
     sex = st.selectbox("Sex", ["Male", "Female"])
@@ -60,7 +49,22 @@ with st.form("heart_form"):
 
     submitted = st.form_submit_button("Predict")
 
-# Prepare input and predict
+# Close form container
+st.markdown("""
+</div>
+<style>
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 800px;
+        margin: 3rem auto;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Prediction logic
 if submitted:
     input_df = pd.DataFrame({
         "age": [age],
