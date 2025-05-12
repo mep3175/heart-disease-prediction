@@ -5,10 +5,10 @@ import joblib
 # Load model
 model = joblib.load("model.pkl")
 
-# Page configuration
+# Set page config
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
-# Add full background image style
+# Custom background using public GitHub raw image
 st.markdown(
     """
     <style>
@@ -18,20 +18,17 @@ st.markdown(
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            padding: 2rem;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Begin form container
-st.markdown("""
-<div class="form-container">
-    <h2 style='text-align: center;'>❤️ Heart Disease Prediction</h2>
-    <p style='text-align: center;'>Fill out the following information to assess your heart health risk:</p>
-""", unsafe_allow_html=True)
+st.title("❤️ Heart Disease Prediction")
+st.markdown("Fill out the following information to assess your heart health risk:")
 
-# Start form
+# Input form
 with st.form("heart_form"):
     age = st.number_input("Age", 29, 77, 58)
     sex = st.selectbox("Sex", ["Male", "Female"])
@@ -49,22 +46,7 @@ with st.form("heart_form"):
 
     submitted = st.form_submit_button("Predict")
 
-# Close form container
-st.markdown("""
-</div>
-<style>
-    .form-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 40px;
-        border-radius: 20px;
-        max-width: 800px;
-        margin: 3rem auto;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Prediction logic
+# Prepare input and predict
 if submitted:
     input_df = pd.DataFrame({
         "age": [age],
