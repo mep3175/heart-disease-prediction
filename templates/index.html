@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.75);
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #000000;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #000;
+        }
+        input::placeholder {
+            color: #888;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Heart Disease Prediction</h2>
+        <form method="POST">
+            <label>Age (29–77):</label><input type="number" name="age" placeholder="e.g. 58">
+            <label>Sex:</label>
+            <select name="sex">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+            <label>Chest Pain Type (0–3):</label><input type="number" name="cp" placeholder="e.g. 0">
+            <label>Resting BP (94–200):</label><input type="number" name="trestbps" placeholder="e.g. 120">
+            <label>Cholesterol (126–564):</label><input type="number" name="chol" placeholder="e.g. 204">
+            <label>Fasting Blood Sugar >120 mg/dL:</label>
+            <select name="fbs">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label>Rest ECG (0–2):</label><input type="number" name="restecg" placeholder="e.g. 1">
+            <label>Max Heart Rate (71–202):</label><input type="number" name="thalach" placeholder="e.g. 160">
+            <label>Exercise Induced Angina:</label>
+            <select name="exang">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label>Oldpeak (0.0–6.2):</label><input type="number" step="any" name="oldpeak" placeholder="e.g. 1.0">
+            <label>Slope (0–2):</label><input type="number" name="slope" placeholder="e.g. 1">
+            <label>Number of Major Vessels (0–3):</label><input type="number" name="ca" placeholder="e.g. 0">
+            <label>Thal (1: Normal, 2: Fixed Defect, 3: Reversible):</label><input type="number" name="thal" placeholder="e.g. 2">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
